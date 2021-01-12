@@ -1,0 +1,12 @@
+***************************** Top of Data **********************
+//API11TRI  JOB 'API11',MSGCLASS=H,NOTIFY=&SYSUID,TIME=(,1)
+//STEP1     EXEC PGM=SORT
+//SORTIN    DD DISP=SHR,DSN=API11.COB.ASSURES
+//SORTOUT   DD DISP=(NEW,CATLG,DELETE),DSN=API11.ACTIF.ASSURET2,
+//           SPACE=(TRK,(1,1,0)),UNIT=SYSDA
+//*
+//SYSOUT    DD DUMMY
+//SYSIN     DD *
+  SORT FORMAT=CH,
+       FIELDS=(45,5,D,1,6,A)
+/*
