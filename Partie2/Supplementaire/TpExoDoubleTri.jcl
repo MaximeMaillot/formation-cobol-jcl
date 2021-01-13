@@ -2,7 +2,7 @@
 //STEP1     EXEC PGM=SORT
 //SORTIN    DD DSN=API11.COB.ASSURES,DISP=SHR
 //SORTOUT   DD DSN=API11.ACTIF.ASSURET2,DISP=(NEW,CATLG,DELETE),
-//           SPACE=(TRK,(1,1,0)),UNIT=SYSDA
+//           SPACE=(TRK,(1,1,0),RLSE),UNIT=SYSDA
 //*
 //SYSOUT    DD DUMMY
 //* On insère les arguments de tri les uns après les autres

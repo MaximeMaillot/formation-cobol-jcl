@@ -3,7 +3,7 @@
 //SYSUT1    DD DSN=API11.COB.ASSURES,DISP=SHR
 //* Pour créer un membre, on utilise des parenthèses : A.B.C(NOMFICHIER)
 //SYSUT2    DD DSN=API11.SOURCE.JCL(TEST1),DISP=SHR,
-//           SPACE=(TRK,(1,1,0)),UNIT=SYSDA
+//           SPACE=(TRK,(1,1,0),RLSE),UNIT=SYSDA
 //*
 //SYSPRINT  DD DUMMY
 //SYSIN     DD DUMMY

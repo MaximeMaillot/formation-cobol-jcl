@@ -1,9 +1,10 @@
 //API11ALB  JOB 'API11',MSGCLASS=H,NOTIFY=&SYSUID,TIME=(,1)
 //STEP1     EXEC PGM=SORT
 //SORTIN    DD DSN=API11.COB.ASSURES,DISP=SHR
-//* On passe le fichier via la création d'un fichier temporaire
+//* On passe les données via la création d'un fichier temporaire
 //* On met une réference &&NOMFICHIER dans le DNS
-//SORTOUT   DD DSN=&&MAX,DISP=(NEW,PASS),SPACE=(TRK,(1,1,0)),UNIT=SYSDA
+//SORTOUT   DD DSN=&&MAX,DISP=(NEW,PASS),
+//           SPACE=(TRK,(1,1,0),RLSE),UNIT=SYSDA
 //*
 //SYSOUT    DD DUMMY
 //SYSIN     DD *

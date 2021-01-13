@@ -3,7 +3,7 @@
 //SORTIN    DD DSN=API11.COB.ASSURES,DISP=SHR
 //* On créer un fichier temp &&SORTFILE qu'on PASS
 //SORTOUT   DD DSN=&&SORTFILE,DISP=(NEW,PASS),
-//           SPACE=(TRK,(1,1,0)),UNIT=SYSDA
+//           SPACE=(TRK,(1,1,0),RLSE),UNIT=SYSDA
 //*
 //SYSOUT    DD DUMMY
 //SYSIN     DD *

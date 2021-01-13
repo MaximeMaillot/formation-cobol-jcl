@@ -3,7 +3,7 @@
 //SORTIN    DD DSN=API11.COB.ASSURES,DISP=SHR
 //* On passe les données de SORT à IEBGENER via la création d'un fichier
 //SORTOUT   DD DSN=API11.ACTIF.ASSURESM,DISP=(NEW,CATLG,DELETE),
-//           SPACE=(TRK,(1,1,0)),UNIT=SYSDA
+//           SPACE=(TRK,(1,1,0),RLSE),UNIT=SYSDA
 //*
 //SYSOUT    DD DUMMY
 //SYSIN     DD *
