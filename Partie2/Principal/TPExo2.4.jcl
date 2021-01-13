@@ -1,6 +1,8 @@
 //API11D    JOB 'API11',MSGCLASS=H,NOTIFY=&SYSUID,TIME=(,1)
 //STEP1     EXEC PGM=IEBGENER
+//* Membre donc utilisation de parenthèses
 //SYSUT1    DD DISP=SHR,DSN=API11.SOURCE.JCL(TEST1)
+//* Fichier séquentiel (DirectoryBlock = 0)
 //SYSUT2    DD DSN=API11.ACTIF.ASSURES3,DISP=(NEW,CATLG,DELETE),
 //           SPACE=(TRK,(1,1,0)),UNIT=SYSDA
 //*

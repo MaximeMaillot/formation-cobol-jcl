@@ -3,5 +3,6 @@
 //SYSUT1    DD DSN=API11.COB.ASSURES,DISP=SHR
 //SYSUT2    DD SYSOUT=*
 //*
+//* On envoie nos données vers SYSPRINT
 //SYSPRINT  DD SYSOUT=*
 //SYSIN     DD DUMMY
