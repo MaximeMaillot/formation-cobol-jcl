@@ -19,6 +19,7 @@ Correction : [TPExoDoubleTri.jcl](https://github.com/MaximeMaillot/formation-cob
 Utiliser un PGM=SORT pour trier un APIN.COB.ASSURES et afficher dans le SYSPRINT d'un PGM=IEBGENER
 
 Correction avec création de fichier : [TpExo2Tri2Step.jcl](https://github.com/MaximeMaillot/formation-cobol-jcl/blob/main/Partie2/Supplementaire/TPExoTri2Step.jcl)
+
 Correction avec utilisation d'un fichier temporaire : [TPExoTri2StepReference.jcl](https://github.com/MaximeMaillot/formation-cobol-jcl/blob/main/Partie2/Supplementaire/TPExoTri2StepReference.jcl) OU [TPExoAlTri2StepReferenceV2.Jcl](https://github.com/MaximeMaillot/formation-cobol-jcl/blob/main/Partie2/Supplementaire/TPExoAlTri2StepReferenceV2.jcl)
 
 ### Concatener des fichiers
