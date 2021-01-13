@@ -9,6 +9,7 @@ FixPDS.jcl permet de réparer un PDS en envoyant un fichier avec le bon format e
 ### Plusieurs critères de tri
 
 Enoncé similaire à la question 9, mais on utilise plusieurs critère de tri.
+
 ATTENTION : Utiliser des critères de tri non unique (Code postal, ou la dernière colonne)
 
 Correction : TPExoDoubleTri.jcl
