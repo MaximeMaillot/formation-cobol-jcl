@@ -1,4 +1,3 @@
-***************************** Top of Data **********************
 //API11TRI  JOB 'API11',MSGCLASS=H,NOTIFY=&SYSUID,TIME=(,1)
 //STEP1     EXEC PGM=SORT
 //SORTIN    DD DISP=SHR,DSN=API11.COB.ASSURES
