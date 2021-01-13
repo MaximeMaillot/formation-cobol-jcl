@@ -5,6 +5,7 @@
 //           SPACE=(TRK,(1,1,0)),UNIT=SYSDA
 //*
 //SYSOUT    DD DUMMY
+//* On insère les arguments de tri les uns après les autres
 //SYSIN     DD *
   SORT FORMAT=CH,
        FIELDS=(45,5,D,1,6,A)

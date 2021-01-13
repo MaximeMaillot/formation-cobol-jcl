@@ -3,7 +3,7 @@
 //SYSUT1    DD *
 FIX THAT SHIT
 /*
-//* PDS a fixé
+//* PDS a fixé avec le bon format
 //SYSUT2    DD DSN=API11.SOURCE.JCL(FIX),DISP=SHR,
 //           DCB=(LRECL=80,BLKSIZE=27920,RECFM=FB)
 //*
