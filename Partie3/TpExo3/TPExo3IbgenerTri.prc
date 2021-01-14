@@ -1,6 +1,5 @@
 //API11TRI  JOB 'API11',MSGCLASS=H,NOTIFY=&SYSUID,TIME=(,10)
 //INSMPROC  PROC
-//*
 //PROC1     EXEC PGM=SORT
 //SORTIN     DD DUMMY
 //SORTOUT    DD DSN=API11.ACTIF.ASSUREIS,DISP=(NEW,CATLG,DELETE),
@@ -8,7 +7,8 @@
 //SYSOUT     DD DUMMY
 //SYSIN      DD DUMMY
 //          PEND
-//*
+//* On change encore une fois les valeurs d'entrées et de sorties
+//* On indique le SYSIN pour un tri
 //STEP1     EXEC INSMPROC
 //SORTIN    DD DSN=API11.COB.ASSURES,DISP=SHR
 //SORTOUT   DD SYSOUT=*

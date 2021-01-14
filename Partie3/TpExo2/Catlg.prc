@@ -3,6 +3,7 @@
 //PRLIB JCLLIB ORDER=API11.SOURCE.JCL
 //*
 //STEP1   EXEC PROC=EXO34E
+//* On change le SYSIN de la procédure
 //SYSIN   DD *
  SORT FIELDS=(1,6,CH,A)
 /*

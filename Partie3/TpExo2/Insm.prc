@@ -3,14 +3,13 @@
 //*
 //PROC1      EXEC PGM=SORT
 //SORTIN     DD DSN=API11.COB.ASSURES,DISP=SHR
-//SORTOUT    DD DSN=API11.ACTIF.ASSUREIS,DISP=(NEW,CATLG,DELETE),
-//            SPACE=(TRK,(1,1,0),RLSE),UNIT=SYSDA
+//SORTOUT    DD SYSOUT=*
 //SYSOUT     DD DUMMY
 //SYSIN      DD DUMMY
 //          PEND
 //*
 //STEP1     EXEC INSMPROC
-//SORTOUT   DD SYSOUT=*
+//* On indique la valeur de SYSIN a utilisé pour la procédure
 //SYSIN     DD *
  SORT FIELDS=(1,6,CH,A)
 /*
