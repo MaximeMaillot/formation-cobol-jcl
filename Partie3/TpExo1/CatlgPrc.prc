@@ -1,3 +1,4 @@
+//* Une procédure catalogué n'a pas besoin de PROC ou de PEND
 //EXO32    EXEC PGM=IEBGENER
 //SYSUT1     DD DSN=API11.SOURCE.JCL(EXO21),DISP=SHR
 //SYSUT2     DD SYSOUT=*
