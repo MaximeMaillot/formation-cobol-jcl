@@ -1,5 +1,6 @@
 //API11A JOB 'API11',MSGCLASS=H,NOTIFY=&SYSUID,TIME=(,10)
 //* Question 1
+//* Créer un fichier KSDS
 //SORT      EXEC PGM=SORT
 //SORTIN    DD DSN=API11.COB.ASSURES,DISP=SHR
 //SORTOUT   DD DSN=&&SORTOUT,DISP=(NEW,PASS),
@@ -22,6 +23,7 @@
     VOLUMES(APIWK1))
 /*
 //* Question 2
+//* Remplir le fichier KSDS
 //KSDSREP   EXEC  PGM=IDCAMS
 //ENTREE    DD DSN=&&SORTOUT,DISP=SHR
 //SYSPRINT  DD SYSOUT=*
@@ -30,6 +32,7 @@
             ODS(API11.ACTIF.FICH01K)
 /*
 //* Question 3
+//* Créer un KSDS à partir d'un modèle
 //KSDSC    EXEC  PGM=IDCAMS
 //SYSPRINT  DD    SYSOUT=*
 //SYSIN     DD  *
@@ -38,18 +41,13 @@
     MODEL(API11.ACTIF.FICH01K))
 /*
 //* Question 4
+//* Copier un KSDS dans un autre KSDS
 //KSDS2    EXEC  PGM=IDCAMS
 //SYSPRINT  DD    SYSOUT=*
 //SYSIN     DD  *
     DELETE API11.ACTIF.FICH03K
     DEFINE CLUSTER (NAME(API11.ACTIF.FICH03K) -
-    CISZ(4096) -
-    TRK(1,1) -
-    FSPC(10 20) -
-    IXD -
-    RECSZ(80 80) -
-    KEYS(6 0) -
-    VOLUMES(APIWK1))
+    MODEL(API11.ACTIF.FICH01K))
 /*
 //KSDSREP2   EXEC  PGM=IDCAMS
 //SYSPRINT  DD SYSOUT=*
@@ -58,6 +56,7 @@
             ODS(API11.ACTIF.FICH03K)
 /*
 //* Question 5
+//* Copier un KSDS vers un ESDS
 //ESDS    EXEC  PGM=IDCAMS
 //SYSPRINT  DD    SYSOUT=*
 //SYSIN     DD  *
