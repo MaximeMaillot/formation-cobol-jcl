@@ -1,4 +1,3 @@
-***************************** Top of Data ****************
 //API11K JOB 'API11',MSGCLASS=H,NOTIFY=&SYSUID,TIME=(,10)
 //DEFINE    EXEC  PGM=IDCAMS
 //SYSPRINT  DD    SYSOUT=*
