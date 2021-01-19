@@ -76,6 +76,7 @@
             ODS(API11.ACTIF.FICH04E)
 /*
 //* Question 6
+//* Print en dump, hex et char
 //PRINT EXEC PGM=IDCAMS
 //ENTREE   DD DSN=API11.ACTIF.FICH03K,DISP=SHR
 //SYSPRINT DD SYSOUT=*
@@ -85,6 +86,7 @@
     PRINT IFILE(ENTREE) CHAR
 /*
 //* Question 7
+//* Print les 10 premiers enregistrement
 //PRINT EXEC PGM=IDCAMS
 //ENTREE   DD DSN=API11.ACTIF.FICH03K,DISP=SHR
 //SYSPRINT DD SYSOUT=*
@@ -92,6 +94,7 @@
     PRINT IFILE(ENTREE) CHAR COUNT(10)
 /*
 //* Question 8
+//* Passer 10 enregistrement et print les 5 suivants
 //PRINT EXEC PGM=IDCAMS
 //ENTREE   DD DSN=API11.ACTIF.FICH03K,DISP=SHR
 //SYSPRINT DD SYSOUT=*
