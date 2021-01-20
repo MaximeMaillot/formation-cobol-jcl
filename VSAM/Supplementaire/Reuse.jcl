@@ -1,0 +1,104 @@
+//API11NRT JOB 'API11',MSGCLASS=H,NOTIFY=&SYSUID,TIME=(,10)
+//SORT      EXEC PGM=SORT
+//SORTIN    DD DSN=API11.COB.MVTPROJ,DISP=SHR
+//SORTOUT   DD DSN=&&SORTOUT,DISP=(NEW,PASS),
+//           SPACE=(TRK,(1,1,0),RLSE),UNIT=SYSDA
+//SYSOUT    DD DUMMY
+//SYSIN     DD *
+  SORT FIELDS=(1,6,CH,A)
+/*
+//* -----------
+//* Question 1
+//* Créer un fichier KSDSEXON en NOREUSE
+//* -----------
+//KSDSN    EXEC  PGM=IDCAMS
+//SYSPRINT  DD    SYSOUT=*
+//SYSIN     DD  *
+    DELETE API11.ACTIF.KSDSEXON
+    DEFINE CLUSTER (NAME(API11.ACTIF.KSDSEXON) -
+    CISZ(4096) -
+    TRK(1,1) -
+    FSPC(10 20) -
+    IXD -
+    RECSZ(80 80) -
+    KEYS(6 0) -
+    VOLUMES(APIWK1) -
+    NOREUSE)
+/*
+//* -----------
+//* Repro noreuse de API11.COB.MVTPROJ
+//* -----------
+//REPRONN    EXEC  PGM=IDCAMS
+//ENTREE    DD DSN=&&SORTOUT,DISP=SHR
+//SYSPRINT  DD SYSOUT=*
+//SYSIN     DD *
+    REPRO   IFILE(ENTREE) -
+            ODS(API11.ACTIF.KSDSEXON) -
+            NOREUSE
+/*
+//* -----------
+//* Repro reuse de API11.COB.MVTPROJ
+//* -----------
+//NRTINSR    EXEC  PGM=IDCAMS
+//ENTREE    DD DSN=API11.SOURCE.JCL(TINS),DISP=SHR
+//SYSPRINT  DD SYSOUT=*
+//SYSIN     DD *
+    REPRO   IFILE(ENTREE) -
+            ODS(API11.ACTIF.KSDSEXON) -
+            REUSE
+/*
+//NRTINSNR    EXEC  PGM=IDCAMS
+//ENTREE    DD DSN=API11.SOURCE.JCL(TINS),DISP=SHR
+//SYSPRINT  DD SYSOUT=*
+//SYSIN     DD *
+    REPRO   IFILE(ENTREE) -
+            ODS(API11.ACTIF.KSDSEXON) -
+            NOREUSE
+/*
+//* -----------
+//* Question 2
+//* Créer un fichier KSDSEXOR en REUSE
+//* -----------
+//KSDS    EXEC  PGM=IDCAMS
+//SYSPRINT  DD    SYSOUT=*
+//SYSIN     DD  *
+    DELETE API11.ACTIF.KSDSEXOR
+    DEFINE CLUSTER (NAME(API11.ACTIF.KSDSEXOR) -
+    CISZ(4096) -
+    TRK(1,1) -
+    FSPC(10 20) -
+    IXD -
+    RECSZ(80 80) -
+    KEYS(6 0) -
+    VOLUMES(APIWK1) -
+    REUSE)
+/*
+//* -----------
+//* Repro noreuse
+//* -----------
+//REPRORN    EXEC  PGM=IDCAMS
+//ENTREE    DD DSN=&&SORTOUT,DISP=SHR
+//SYSPRINT  DD SYSOUT=*
+//SYSIN     DD *
+    REPRO   IFILE(ENTREE) -
+            ODS(API11.ACTIF.KSDSEXOR)
+/*
+//* -----------
+//* Repro reuse
+//* -----------
+//RTINSNR    EXEC  PGM=IDCAMS
+//ENTREE    DD DSN=API11.SOURCE.JCL(TINS),DISP=SHR
+//SYSPRINT  DD SYSOUT=*
+//SYSIN     DD *
+    REPRO   IFILE(ENTREE) -
+            ODS(API11.ACTIF.KSDSEXOR) - 
+            NOREUSE
+/*
+//RTINSR    EXEC  PGM=IDCAMS
+//ENTREE    DD DSN=API11.SOURCE.JCL(TINS),DISP=SHR
+//SYSPRINT  DD SYSOUT=*
+//SYSIN     DD *
+    REPRO   IFILE(ENTREE) -
+            ODS(API11.ACTIF.KSDSEXOR) - 
+            REUSE
+/*
